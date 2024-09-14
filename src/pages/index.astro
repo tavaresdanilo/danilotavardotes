@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SimplesIconsTelegram from  '../assets/icons/SimpleIconsTelegram.astro'
+import SimplesIconsLinkedin from '../assets/icons/SimpleIconsLinkedin.astro'
+import SimplesIconsBluesky from '../assets/icons/SimpleIconsBluesky.astro'
+import SimplesIconsGithub from '../assets/icons/SimpleIconsGithub.astro'
+import SimplesIconsDiscord from '../assets/icons/SimpleIconsDiscord.astro'
+import { Image } from 'astro:assets';
+
+const personalData = [
+	"Danilo",
+	"Tavares",
+	"https://avatars.githubusercontent.com/u/165584720?v=4"
+]
+---
+
+<Layout title="Danilo Tavares">
+	<header class="flex items-center justify-center p-8 absolute top-0 left-0 right-0">
+		danilotavar.es
+	</header>
+	<main class="flex flex-col items-center justify-center lg:grid lg:grid-cols-2 lg:place-content-center">
+		<div class="bg-zinc-100 h-1/2 w-full lg:h-screen flex items-center justify-end lg:justify-center flex-col">
+			<Image src={personalData[2]} alt={"Foto de " + personalData[0]} inferSize class="rounded-full w-64 lg:w-96" />
+		</div>
+		<div class="bg-zinc-100 h-1/2 w-full lg:h-screen flex items-center justify-start lg:justify-center flex-col">
+			<h1 class="text-6xl lg:text-7xl font-bold mt-16 lg:mt-0">Danilo Tavares</h1>
+			<span class="text-2xl lg:text-3xl font-medium">Web Development</span>
+		</div>
+	</main>
+	<footer class="flex items-center justify-between p-8 absolute bottom-0 left-0 right-0 text-zinc-900">
+		&copy; { new Date().getFullYear() } Danilo Tavares
+		<nav class="flex items-center justify-between gap-4 text-zinc-400">
+			<a href="https://telegram.danilotavar.es" target="_blank" rel="noopener noreferrer">
+				<SimplesIconsTelegram class="size-6 hover:text-zinc-900"/>
+			</a>
+			<a href="https://linkedin.danilotavar.es" target="_blank" rel="noopener noreferrer">
+				<SimplesIconsLinkedin class="size-6 hover:text-zinc-900" />
+			</a>
+			<a href="https://bluesky.danilotavar.es" target="_blank" rel="noopener noreferrer">
+				<SimplesIconsBluesky class="size-6 hover:text-zinc-900" />
+			</a>
+			<a href="https://github.danilotavar.es" target="_blank" rel="noopener noreferrer">
+				<SimplesIconsGithub class="size-6 hover:text-zinc-900" />
+			</a>
+			<a href="https://discord.danilotavar.es" target="_blank" rel="noopener noreferrer">
+				<SimplesIconsDiscord class="size-6 hover:text-zinc-900" />
+			</a>
+		</nav>
+	</footer>
+</Layout>
